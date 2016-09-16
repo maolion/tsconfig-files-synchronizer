@@ -1,0 +1,35 @@
+{
+  "name": "tsconfig-files-synchronizer",
+  "version": "0.1.0",
+  "description": "用于 自动同步 TypeScript 的 tsconfig 编译配置文件 ",
+  "main": "index.js",
+  "scripts": {
+    "debug": "tsc --watch",
+    "build": "tsc && node_modules/x-dts-generator/bin/dts-generator --name tsconfig-files-synchronizer --project ./ --out dist/tsconfig-files-synchronizer.d.ts --exclude \"{typings/**/*.ts,node_modules/**/*.d.ts,src/test/*.{ts,tsx},src/test/**/*.{ts,tsx}}\"",
+    "prepublish": "npm run build",
+    "deploy": "mocha && npm publish",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maolion/tsconfig-files-synchronizer.git"
+  },
+  "keywords": [
+    "typescirpt",
+    "tsconfig"
+  ],
+  "author": "maolion.j@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maolion/tsconfig-files-synchronizer/issues"
+  },
+  "homepage": "https://github.com/maolion/tsconfig-files-synchronizer#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "typescript": "^1.8.10"
+  },
+  "dependencies": {
+    "thenfail": "^0.4.12"
+  }
+}

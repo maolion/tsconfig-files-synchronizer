@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noEmitOnError": false,
+        "preserveConstEnums": true,
+        "noLib": false,
+        "sourceMap": false,
+        "experimentalDecorators": true
+    },
+    "exclude": [
+        "node_modules",
+        ".vscode",
+        "dist"
+    ]
+}
