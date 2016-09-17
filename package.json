@@ -1,11 +1,12 @@
 {
   "name": "tsconfig-files-synchronizer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "用于 自动同步 TypeScript 的 tsconfig 编译配置文件 files 配置项",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "debug": "tsc --watch",
-    "build": "tsc && node_modules/x-dts-generator/bin/dts-generator --name tsconfig-files-synchronizer --project ./ --out dist/tsconfig-files-synchronizer.d.ts --exclude \"{typings/**/*.ts,node_modules/**/*.d.ts,src/test/*.{ts,tsx},src/test/**/*.{ts,tsx}}\"",
+    "build": "tsc && node_modules/x-dts-generator/bin/dts-generator --name tsconfig-files-synchronizer --project ./ --out dist/index.d.ts --exclude \"{typings/**/*.ts,node_modules/**/*.d.ts,src/test/*.{ts,tsx},src/test/**/*.{ts,tsx}}\"",
     "prepublish": "npm run build",
     "deploy": "mocha && npm publish",
     "test": "mocha --timeout 6000"
