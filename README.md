@@ -1,3 +1,6 @@
+[![NPM Package](https://badge.fury.io/js/tsconfig-files-synchronizer.svg)](https://www.npmjs.com/package/tsconfig-files-synchronizer)
+[![Build Status](https://travis-ci.org/maolion/tsconfig-files-synchronizer.svg)](https://travis-ci.org/maolion/tsconfig-files-synchronizer)
+
 # TSConfig Files Synchronizer
 
 用于 自动同步 TypeScript 的 tsconfig 编译配置文件
