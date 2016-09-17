@@ -87,7 +87,7 @@ describe("tsconfig-files-synchronizer", () => {
             TEST_PROJECT_TSCONFIG_FILE
         );
 
-        tsconfig.fileGlobs.push('./**/*.tsx');
+        tsconfig.fileGlobs=['./**/*.{ts,tsx}'];
         FS.writeFileSync(
             TEST_PROJECT_TSCONFIG_FILE,
             JSON.stringify(tsconfig, null, 4)
