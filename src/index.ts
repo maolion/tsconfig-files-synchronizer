@@ -191,6 +191,7 @@ export class TSConfigFilesSynchronizer extends Events.EventEmitter {
     _handleTSConfigChanged() {
         let id = uid;
         FS.readFile(this._targetFilePath, (err: any, tsconfig: any) => {
+            console.log(this._targetFilePath, 'change', tsconfig);
             if (err || id != uid) {
                 return;
             }
