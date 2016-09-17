@@ -3,7 +3,7 @@
 
 # TSConfig Files Synchronizer
 
-用于 自动同步 TypeScript 的 tsconfig 编译配置文件
+用于 自动同步 TypeScript 的 tsconfig 编译配置文件 files 配置项
 
 ##  版本更新提示
 - 0.1.x
