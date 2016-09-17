@@ -8,7 +8,7 @@
     "build": "tsc && node_modules/x-dts-generator/bin/dts-generator --name tsconfig-files-synchronizer --project ./ --out dist/tsconfig-files-synchronizer.d.ts --exclude \"{typings/**/*.ts,node_modules/**/*.d.ts,src/test/*.{ts,tsx},src/test/**/*.{ts,tsx}}\"",
     "prepublish": "npm run build",
     "deploy": "mocha && npm publish",
-    "test": "mocha"
+    "test": "mocha --timeout 60000"
   },
   "repository": {
     "type": "git",
