@@ -3,7 +3,7 @@ import * as Path from 'path';
 import { expect } from 'chai';
 
 import TSConfigFilesSynchronizer from '../';
-const TEST_PROJECT_DIR = Path.join(__dirname, '../../.cache/test-project');
+const TEST_PROJECT_DIR = Path.join(__dirname, '../../.cache/test-project-' + Date.now());
 const TEST_PROJECT_TSCONFIG_FILE = Path.join(TEST_PROJECT_DIR, "tsconfig.json");
 
 const FILES = [
@@ -129,6 +129,11 @@ describe("tsconfig-files-synchronizer", () => {
 
     it("销毁", () => {
         synchronizer.destroy();
+        try {
+            FS.removeSync(TEST_PROJECT_DIR);
+        } catch (e) {
+            console.log(e)
+        }
         return true;
     });
 });
