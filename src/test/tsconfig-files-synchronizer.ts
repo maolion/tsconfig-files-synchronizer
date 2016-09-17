@@ -3,7 +3,7 @@ import * as Path from 'path';
 import { expect } from 'chai';
 
 import TSConfigFilesSynchronizer from '../';
-const TEST_PROJECT_DIR = Path.join(__dirname, '../../.cache/test-project-' + Date.now());
+const TEST_PROJECT_DIR = Path.join(__dirname, '../../.cache/test-project');
 const TEST_PROJECT_TSCONFIG_FILE = Path.join(TEST_PROJECT_DIR, "tsconfig.json");
 
 const FILES = [
@@ -73,6 +73,11 @@ describe("tsconfig-files-synchronizer", () => {
         let count = 0;
 
         synchronizer.once('sync', () => {
+            console.log(getFiles().join('\n'));
+            console.log('------------');
+            console.log(FILES
+                    .concat(['file2.ts', 'dir1/file2.ts', 'dir1/file3.tsx'])
+                    .sort(sortFunc).join('\n'))
             compareList(
                 getFiles(),  
                 FILES
