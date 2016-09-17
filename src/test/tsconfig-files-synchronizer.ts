@@ -72,6 +72,16 @@ describe("tsconfig-files-synchronizer", () => {
     it("目标tsconfig.json文件被修改", (done) => {
         let count = 0;
 
+        const tsconfig = FS.readJSONSync(
+            TEST_PROJECT_TSCONFIG_FILE
+        );
+        tsconfig.fileGlobs=['./**/*.{ts,tsx}'];
+        console.log(JSON.stringify(tsconfig, null, 4));
+        FS.writeFileSync(
+            TEST_PROJECT_TSCONFIG_FILE,
+            JSON.stringify(tsconfig, null, 4)
+        );
+        
         synchronizer.once('sync', () => {
             console.log(getFiles().join('\n'));
             console.log('------------');
@@ -88,16 +98,8 @@ describe("tsconfig-files-synchronizer", () => {
             done();
         });
 
-        const tsconfig = FS.readJSONSync(
-            TEST_PROJECT_TSCONFIG_FILE
-        );
 
-        tsconfig.fileGlobs=['./**/*.{ts,tsx}'];
-        console.log(JSON.stringify(tsconfig, null, 4));
-        FS.writeFileSync(
-            TEST_PROJECT_TSCONFIG_FILE,
-            JSON.stringify(tsconfig, null, 4)
-        );
+        
     });
 
     it("添加新目录且包含匹配文件", (done) => {
