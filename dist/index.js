@@ -142,15 +142,17 @@ class TSConfigFilesSynchronizer extends Events.EventEmitter {
                 return;
             }
             try {
-                tsconfig = JSON.parse(tsconfig || '{}');
+                tsconfig = JSON.parse(tsconfig.toString() || '{}');
             }
             catch (e) {
+                console.log(e);
                 return;
             }
             let newFileGlobs = tsconfig.fileGlobs || [];
             let oldFileGlobs = this._fileGlobs;
             for (let i = 0, globs = oldFileGlobs.length > newFileGlobs.length ? oldFileGlobs : newFileGlobs, l = globs.length; i < l; i++) {
                 let glob = globs[i];
+                console.log(glob);
                 if (newFileGlobs.indexOf(glob) > -1 && oldFileGlobs.indexOf(glob) > -1) {
                     continue;
                 }
