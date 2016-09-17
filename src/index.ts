@@ -190,8 +190,7 @@ export class TSConfigFilesSynchronizer extends Events.EventEmitter {
     
     _handleTSConfigChanged() {
         let id = uid;
-        FS.readFile(this._targetFilePath, (err: any, tsconfig: any) => {
-            console.log(this._targetFilePath, 'change', tsconfig);
+        FS.readFile(this._targetFilePath, 'utf8', (err: any, tsconfig: any) => {
             if (err || id != uid) {
                 return;
             }
@@ -212,6 +211,7 @@ export class TSConfigFilesSynchronizer extends Events.EventEmitter {
                 } else {
                     this._fileGlobs = newFileGlobs;
                     this._tsconfig = tsconfig;
+                    console.log("watch");
                     this._watch();
                     return;
                 }
