@@ -66,6 +66,7 @@ describe("tsconfig-files-synchronizer", () => {
         });
         const tsconfig = FS.readJSONSync(TEST_PROJECT_TSCONFIG_FILE);
         tsconfig.fileGlobs = ['./**/*.{ts,tsx}'];
+        console.log(JSON.stringify(tsconfig, null, 4));
         FS.writeFileSync(TEST_PROJECT_TSCONFIG_FILE, JSON.stringify(tsconfig, null, 4));
     });
     it("添加新目录且包含匹配文件", (done) => {
