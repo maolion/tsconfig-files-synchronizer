@@ -6,7 +6,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "debug": "./node_modules/.bin/tsc --watch",
-    "build": "./node_modules/.bin/tsc && node_modules/x-dts-generator/bin/dts-generator --name tsconfig-files-synchronizer --project ./ --out dist/index.d.ts --exclude \"{typings/**/*.ts,node_modules/**/*.d.ts,src/test/*.{ts,tsx},src/test/**/*.{ts,tsx}}\"",
+    "build": "./node_modules/.bin/tsc && node_modules/.bin/dts-generator --name tsconfig-files-synchronizer --project ./ --out dist/index.d.ts --exclude \"{typings/**/*.ts,node_modules/**/*.d.ts,src/test/*.{ts,tsx},src/test/**/*.{ts,tsx}}\"",
     "prepublish": "npm run build",
     "deploy": "mocha && npm publish",
     "test": "mocha --timeout 6000"
