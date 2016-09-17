@@ -204,17 +204,13 @@ export class TSConfigFilesSynchronizer extends Events.EventEmitter {
             
             let newFileGlobs = tsconfig.fileGlobs || [];
             let oldFileGlobs = this._fileGlobs;
-            console.log(newFileGlobs)
-            console.log(oldFileGlobs);
             for (let i = 0, globs = oldFileGlobs.length > newFileGlobs.length ? oldFileGlobs : newFileGlobs, l = globs.length; i < l; i++) {
                 let glob = globs[i];
-                console.log(glob);
                 if (newFileGlobs.indexOf(glob) > -1 && oldFileGlobs.indexOf(glob) > -1) {
                     continue;
                 } else {
                     this._fileGlobs = newFileGlobs;
                     this._tsconfig = tsconfig;
-                    console.log("watch");
                     this._watch();
                     return;
                 }

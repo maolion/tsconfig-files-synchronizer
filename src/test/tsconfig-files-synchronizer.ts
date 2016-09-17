@@ -76,20 +76,14 @@ describe("tsconfig-files-synchronizer", () => {
             TEST_PROJECT_TSCONFIG_FILE
         );
         tsconfig.fileGlobs=['./**/*.{ts,tsx}'];
-        console.log(JSON.stringify(tsconfig, null, 4));
         setTimeout(function() {
             FS.writeFileSync(
                 TEST_PROJECT_TSCONFIG_FILE,
                 JSON.stringify(tsconfig, null, 4)
             );
-        }, 1000);
+        }, 100);
 
         synchronizer.once('sync', () => {
-            console.log(getFiles().join('\n'));
-            console.log('------------');
-            console.log(FILES
-                    .concat(['file2.ts', 'dir1/file2.ts', 'dir1/file3.tsx'])
-                    .sort(sortFunc).join('\n'))
             compareList(
                 getFiles(),  
                 FILES
@@ -142,7 +136,6 @@ describe("tsconfig-files-synchronizer", () => {
         try {
             FS.removeSync(TEST_PROJECT_DIR);
         } catch (e) {
-            console.log(e)
         }
         return true;
     });
