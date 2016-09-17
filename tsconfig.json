@@ -9,11 +9,13 @@
         "preserveConstEnums": true,
         "noLib": false,
         "sourceMap": false,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "outDir": "./dist"
     },
     "exclude": [
         "node_modules",
         ".vscode",
+        ".cache",
         "dist"
     ]
 }
