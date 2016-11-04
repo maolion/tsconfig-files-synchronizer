@@ -1,9 +1,9 @@
 {
   "globalDependencies": {
     "chokidar": "registry:dt/chokidar#1.4.3+20160316155526",
-    "fs-extra": "registry:dt/fs-extra#0.0.0+20160907105211",
+    "fs-extra": "registry:dt/fs-extra#0.0.0+20161004190449",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
-    "node": "registry:dt/node#6.0.0+20160915134512"
+    "node": "registry:dt/node#6.0.0+20161019125345"
   },
   "dependencies": {
     "chai": "registry:npm/chai#3.5.0+20160723033700",
